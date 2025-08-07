@@ -1,0 +1,17 @@
+#nome_secretaria {
+    font-size: 35px;
+    font-weight: bold;
+    width: 200px;
+    margin-left: 28px;
+    color: white;
+    margin-top: 5px;
+}
+
+#desc_secretaria {
+    font-size: 13.5px;
+    font-weight: bold;
+    width: 200px;
+    margin-top: -10px;
+    margin-left: 20px;
+    color: white;
+}

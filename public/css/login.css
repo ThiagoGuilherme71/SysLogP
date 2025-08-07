@@ -1,0 +1,188 @@
+.form-signin {
+    height: 350px;
+    position: absolute;
+    left: 65%;
+    top: 30%;
+}
+
+.login-container {
+    background: #fff;
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.253);
+}
+
+.alert {
+    background-color: #3097d1;
+    border-color: #3097d1;
+    color: #fff;
+    position: absolute;
+    top: 26.5%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 18%;
+}
+
+.div_logo {
+    display: flex;
+    height: 100vh; 
+}
+
+.background_login{
+    max-width: 50vw;
+    width: 100%; 
+}
+
+body{
+    background-color: #3c444a !important;
+    display: flex;
+}
+
+@media  (max-width: 3400px) {
+    .alert{
+        width: 350px;
+        top: 463px;
+        left: 2254px;
+    }
+}
+
+@media  (max-width: 2752px) {
+    .alert{
+        width: 345px;
+        top: 395px;
+        left: 1962px;
+    }
+}
+
+@media  (max-width: 2400px) {
+    .alert{
+        width: 351px;
+        top: 340px;
+        left: 1734px;
+    }
+}
+
+@media  (max-width: 2144px) {
+    .alert{
+        width: 346px;
+        top: 27%;
+        left: 73%;
+    }
+}
+
+@media  (max-width: 1920px) {
+    .alert{
+        width: 18%;
+        top: 264px;
+        left: 1422px;
+    }
+}
+
+@media  (max-width: 1761px) {
+    .alert{
+        width: 20%;
+        top: 26%;
+        left: 75%;
+    }
+}
+@media  (max-width: 1601px) {
+    
+    .alert{
+        width: 22%;
+        top: 26%;
+        left: 76%;
+    }
+}
+
+@media  (max-width: 1473px) {
+    
+    .alert{
+        width: 24%;
+        top: 25.5%;
+        left: 77%;
+    }
+}
+
+@media  (max-width: 1377px) {
+    
+    .alert{
+        width: 348px;
+        top: 25%;
+        left: 1068px;
+    }
+}
+
+@media  (max-width: 1281px) {
+    
+    .alert{
+        width: 347px;
+        top: 25%;
+        left: 78.5%;
+    }
+}
+
+@media  (max-width: 1216px) {
+    
+    .alert{
+        width: 347px;
+        top: 25%;
+        left: 963px;
+    }
+}
+
+@media  (max-width: 1120px) {
+    
+    .alert{
+        width: 349px;
+        top: 143px;
+        left: 903px;
+    }
+}
+
+@media  (max-width: 1056px) {
+    
+    .alert{
+        width: 348px;
+        top: 133px;
+        left: 860px;
+    }
+}
+
+@media  (max-width: 1024px) {
+    
+    .alert{
+        width: 348px;
+        top: 129px;
+        left: 840px;
+    }
+}
+
+@media  (max-width: 960px) {
+    
+    .alert{
+        width: 337px;
+        top: 119px;
+        left: 793px;
+    }
+}
+
+@media  (max-width: 800px) {
+    .form-signin {
+        height: 350px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .alert{
+        width: 350px;
+        position: absolute;
+        left: 50%;
+        top: 142px;
+        transform: translateX(-50%) translateY(-50%);
+
+    }
+}

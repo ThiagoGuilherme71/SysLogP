@@ -1,0 +1,500 @@
+/*
+=======================================
+=            BOA SORTE!               =
+=======================================
+*/
+
+/*STYLE NOVA TELA DE DETALHES LOGS REQUESTS EXECPIOTN*/
+.status-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px !important;
+    background: #f8f9fa;
+    border-left: 4px solid #e9ecef;
+}
+
+/* Badge Base Styles */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.badge:hover::before {
+    left: 100%;
+}
+
+/* Status Icons */
+.badge::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-left: 8px;
+    animation: pulse 2s infinite;
+}
+
+/* Warning Status - Em Tratativa */
+.badge.warning {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+    color: #8b6914;
+    border-left: 4px solid #f39c12;
+}
+
+.badge.warning::after {
+    background-color: #f39c12;
+}
+
+.status-container.warning {
+    border-left-color: #f39c12;
+    background: linear-gradient(135deg, #fff9e6 0%, #fef7e0 100%);
+}
+
+/* Danger Status - Em Andamento */
+.badge.danger {
+    background: linear-gradient(135deg, #fab1a0 0%, #e17055 100%);
+    color: #c0392b;
+    border-left: 4px solid #e74c3c;
+}
+
+.badge.danger::after {
+    background-color: #e74c3c;
+}
+
+.status-container.danger {
+    border-left-color: #e74c3c;
+    background: linear-gradient(135deg, #ffeaea 0%, #fde2e2 100%);
+}
+
+/* Success Status - Resolvido */
+.badge.success {
+    background: linear-gradient(135deg, #a8e6cf 0%, #88d8a3 100%);
+    color: #27ae60;
+    border-left: 4px solid #2ecc71;
+}
+
+.badge.success::after {
+    background-color: #2ecc71;
+}
+
+.status-container.success {
+    border-left-color: #2ecc71;
+    background: linear-gradient(135deg, #eafaf1 0%, #e8f5e8 100%);
+}
+
+/* Unknown Status */
+.badge.unknown {
+    background: linear-gradient(135deg, #b2bec3 0%, #74b9ff 100%);
+    color: #2c3e50;
+    border-left: 4px solid #74b9ff;
+}
+
+.badge.unknown::after {
+    background-color: #74b9ff;
+}
+
+.status-container.unknown {
+    border-left-color: #74b9ff;
+    background: linear-gradient(135deg, #f1f2f6 0%, #e8f4fd 100%);
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.7; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Hover Effects */
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .badge {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Demo Controls */
+.demo-controls {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: #ecf0f1;
+    border-radius: 8px;
+}
+.notifications-container {
+    min-width: 100%;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.error {
+    padding: 1rem;
+    border-radius: 8px !important;
+    background-color: #dfdfdf;
+    box-shadow: 0px 10px 19px rgba(0, 0, 0, 0.24);
+    margin-top: 15px;
+}
+
+.error-svg {
+    color: rgb(185, 28, 28);
+    width: 1.9rem;
+    height: 1.9rem;
+    margin: 5px;
+}
+
+.error-prompt-wrap {
+    margin-left: 1rem;
+}
+
+.error-title {
+    font-weight: bold;
+    color: #3a3a3a;
+}
+
+.error-level {
+    color: rgb(185, 28, 28);
+}
+
+.error-prompt-message {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.error-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.error-details li {
+    margin: 15px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3a3a3a;
+}
+
+.error-details li strong {
+    color: rgb(185, 28, 28);
+}
+
+.error-btn {
+    margin-top: 3%;
+}
+
+
+/* Container geral continua igual */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Cards padrão */
+.dashboard-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 105px;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Ícones e textos */
+.dashboard-icon {
+    font-size: 36px;
+    color: #3656d4;
+    margin-bottom: 10px;
+}
+
+.dashboard-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.dashboard-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+
+.dashboard-value.highlight {
+    color: #d43f3a;
+}
+
+.dashboard-list {
+    margin-top: 10px;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px 20px;
+}
+
+
+.dashboard-list li {
+    background: #f9f9f9;
+    padding: 6px 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    font-size: 14px;
+}
+#card-erros-tipo {
+    grid-column: span 2; /* Faz ele ocupar 2 colunas */
+}
+
+/* Mantém a lista dentro desse card em 3 colunas fixas */
+#card-erros-tipo .dashboard-list {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+}
+
+/* Container do gráfico com altura controlada */
+.grafico-container {
+    position: relative;
+    width: 100%;
+    height: 215px; /* 15% menor que 300px */
+}
+
+#errosPorTipoChart {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.container-geral{
+    border-radius: 10px !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.17);
+}
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px; /* reduzido de 20px */
+    justify-content: start;
+    padding: 17px; /* reduzido de 20px */
+
+}
+
+.card {
+    cursor: pointer;
+    flex: 0 0 128px;
+    border-radius: 10px 0 10px 0 !important;
+    background: linear-gradient(145deg, #2d5ea3, #3874bc);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(145deg, #244d8a, #2d5ea3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+
+.avatar {
+    width: 38px; /* 45px → ~38px */
+    height: 38px;
+    display: inline-block;
+    margin: 26px 13px 17px 21px; /* reduzido proporcionalmente */
+    border-radius: 12px;
+}
+
+.avatar i {
+    font-size: 38px; /* 45px → ~38px */
+    color: #fff;
+}
+
+.info {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    z-index: 10;
+}
+
+.badge-danger {
+    background-color: #ef4d4d;
+    border-radius: 50%;
+    padding: 4px; /* 5px → ~4px */
+    color: white;
+    font-size: 13px; /* ajuste opcional para proporcionalidade */
+}
+.card.selected {
+    background: linear-gradient(145deg, #112bac, #3d60e8) !important;
+    border: 2px solid #3656d4;
+    box-shadow: 0 0 20px rgba(70, 86, 159, 0.6);
+    transform: translateY(-3px) scale(1.06);
+}
+
+.card.selected:hover {
+    background: linear-gradient(145deg, #0b2397, #2d47a8) !important;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px rgba(87, 104, 189, 0.8);
+}
+.content-scroll {
+    max-height: 30vh;
+    overflow-y: auto;
+    font-size: 16px;
+}
+
+.content-1 {
+    width: 80%;
+    font-weight: bold;
+    border-radius: 8.5px !important;
+    background: rgb(255, 255, 255);
+    height: 34px;
+    display: flex;
+    margin: 0 auto 10px auto; /* Remove margin-left e centraliza */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px 20px !important;
+}
+.btn-circle {
+    width: 36px; /* Ajuste conforme necessário */
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    font-size: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-warning-custom {
+    background-color: #ffc107; /* Amarelo */
+    border: none;
+}
+
+.btn-warning-custom:hover {
+    background-color: #e0a800; /* Amarelo escuro ao passar o mouse */
+}
+#logs-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Remove bordas laterais e inferiores */
+#logs-table th, #logs-table td {
+    border: none !important;
+    text-align: center; /* Centralizar conteúdo */
+    padding: 12px; /* Adiciona um espaçamento para visual mais agradável */
+}
+
+/* Alternância de cores de fundo */
+#logs-table tbody tr:nth-child(odd) td {
+    background-color: rgba(244, 244, 244, 0.72) !important; /* Cinza claro */
+}
+
+#logs-table tbody tr:nth-child(even) td {
+    background-color: #ffffff !important; /* Branco */
+}
+
+/* Estilo do cabeçalho */
+#logs-table thead {
+    background: white;
+    color: black;
+    font-weight: bold;
+}
+
+/* Ajustando botão */
+#logs-table button {
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+/* Contêiner das abas */
+.nav-tabs-container {
+    width: 100%;
+    padding-bottom: 5px;
+}
+
+/* Lista das abas */
+.nav-tabs {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+/* Estilo das abas */
+.nav-item {
+    cursor: pointer;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 2px solid transparent; /* Borda oculta inicialmente */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Quando passa o mouse */
+.nav-item:hover {
+    color: #007bff;
+}
+
+/* Aba ativa */
+.nav-item.active {
+    border-bottom: 3px solid #007bff; /* Linha azul abaixo da aba ativa */
+    color: #007bff;
+}
